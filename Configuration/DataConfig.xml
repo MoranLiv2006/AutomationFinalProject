@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Enviroment>
+
+    <!-- Credentials -->
+    <userEmail>maneyi5217@glenwoodave.com</userEmail>
+    <userPassword>A1b2c3d4e5@</userPassword>
+
+    <!-- DB -->
+    <DBURL>jdbc:mysql://remotemysql.com:3306/RtSQRMWl6c</DBURL>
+    <DBUserName>RtSQRMWl6c</DBUserName>
+    <DBPassword>1BFLkm0d0b</DBPassword>
+
+    <!-- Timeout -->
+    <Timeout>5</Timeout>
+
+    <!-- Web -->
+    <BrowserName>Chrome</BrowserName>
+    <url>https://automationproject.avaza.com/</url>
+    <ImageRepo>./imageRepository/</ImageRepo>
+
+    <!-- API -->
+        <!-- Avaza API -->
+        <AvazaAPIURL>https://api.avaza.com/</AvazaAPIURL>
+        <AvazaAPIToken>256993-666aeebff7f72a7b8676b766d6891a52321f427c</AvazaAPIToken>
+
+        <!-- OpenWeatherMap API -->
+        <OpenWeatherMapTokenAPIURL>http://api.openweathermap.org/data/2.5/weather</OpenWeatherMapTokenAPIURL>
+        <OpenWeatherMapToken>e24d6bd1b67f9ac5d4a8e5343632fbac</OpenWeatherMapToken>
+
+        <!-- Chuck Norris Jokes API -->
+        <ChuckNorrisJokesAPIURL>https://api.chucknorris.io/jokes/random</ChuckNorrisJokesAPIURL>
+
+
+
+
+
+
+</Enviroment>
