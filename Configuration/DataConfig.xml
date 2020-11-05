@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Enviroment>
 
-    <!-- Credentials -->
-    <userEmail>maneyi5217@glenwoodave.com</userEmail>
-    <userPassword>A1b2c3d4e5@</userPassword>
-
     <!-- DB -->
     <DBURL>jdbc:mysql://remotemysql.com:3306/RtSQRMWl6c</DBURL>
     <DBUserName>RtSQRMWl6c</DBUserName>
     <DBPassword>1BFLkm0d0b</DBPassword>
 
     <!-- Timeout -->
-    <Timeout>5</Timeout>
+    <Timeout>8</Timeout>
 
     <!-- Web -->
     <BrowserName>Chrome</BrowserName>

@@ -1,84 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="48261" started-at="2020-11-05T21:21:09 IST" finished-at="2020-11-05T21:21:58 IST">
+  <suite name="Suite" duration-ms="19574" started-at="2020-11-05T22:50:15 IST" finished-at="2020-11-05T22:50:35 IST">
     <groups>
     </groups>
-    <test name="Web Tests" duration-ms="48261" started-at="2020-11-05T21:21:09 IST" finished-at="2020-11-05T21:21:58 IST">
-      <class name="SanityTests.avazaWeb">
-        <test-method status="PASS" signature="startSession(java.lang.String)[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="startSession" is-config="true" duration-ms="14815" started-at="2020-11-05T21:21:10 IST" finished-at="2020-11-05T21:21:24 IST">
+    <test name="API Tests" duration-ms="19574" started-at="2020-11-05T22:50:15 IST" finished-at="2020-11-05T22:50:35 IST">
+      <class name="SanityTests.avazaAPI">
+        <test-method status="PASS" signature="startSession(java.lang.String)[pri:0, instance:SanityTests.avazaAPI@132ddbab]" name="startSession" is-config="true" duration-ms="2759" started-at="2020-11-05T22:50:15 IST" finished-at="2020-11-05T22:50:18 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[web]]>
+                <![CDATA[api]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method status="PASS" signature="test01_login()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="test01_login" duration-ms="2400" started-at="2020-11-05T21:21:24 IST" description="Test01: Login to Avaza website with credentials." finished-at="2020-11-05T21:21:27 IST">
+        <test-method status="PASS" signature="test01_getProjectsNameFromServerAndVerify()[pri:0, instance:SanityTests.avazaAPI@132ddbab]" name="test01_getProjectsNameFromServerAndVerify" duration-ms="4255" started-at="2020-11-05T22:50:18 IST" description="Test01: Get projects information from the server" finished-at="2020-11-05T22:50:22 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test01_login -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="489" started-at="2020-11-05T21:21:27 IST" finished-at="2020-11-05T21:21:27 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="test02_verifyYouAreTheOnlyUser()[pri:1, instance:SanityTests.avazaWeb@6326d182]" name="test02_verifyYouAreTheOnlyUser" duration-ms="1462" started-at="2020-11-05T21:21:27 IST" description="Test02: Verify default users." finished-at="2020-11-05T21:21:29 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test02_verifyYouAreTheOnlyUser -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="324" started-at="2020-11-05T21:21:29 IST" finished-at="2020-11-05T21:21:29 IST">
+        </test-method> <!-- test01_getProjectsNameFromServerAndVerify -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaAPI@132ddbab]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-11-05T22:50:23 IST" finished-at="2020-11-05T22:50:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="test03_addAndVerifyNewUser()[pri:2, instance:SanityTests.avazaWeb@6326d182]" name="test03_addAndVerifyNewUser" duration-ms="3810" started-at="2020-11-05T21:21:29 IST" description="Test03: Add and verify new user." finished-at="2020-11-05T21:21:33 IST">
+        <test-method status="PASS" signature="test02_postTasksToServerAndVerify()[pri:1, instance:SanityTests.avazaAPI@132ddbab]" name="test02_postTasksToServerAndVerify" duration-ms="7055" started-at="2020-11-05T22:50:23 IST" description="Test02: Post new task to server" finished-at="2020-11-05T22:50:30 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test03_addAndVerifyNewUser -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="486" started-at="2020-11-05T21:21:33 IST" finished-at="2020-11-05T21:21:34 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="test04_deleteAndVerifyTheNewUser()[pri:3, instance:SanityTests.avazaWeb@6326d182]" name="test04_deleteAndVerifyTheNewUser" duration-ms="2482" started-at="2020-11-05T21:21:34 IST" description="Test04: Delete and verify users." finished-at="2020-11-05T21:21:36 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test04_deleteAndVerifyTheNewUser -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="430" started-at="2020-11-05T21:21:36 IST" finished-at="2020-11-05T21:21:36 IST">
+        </test-method> <!-- test02_postTasksToServerAndVerify -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaAPI@132ddbab]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-11-05T22:50:30 IST" finished-at="2020-11-05T22:50:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="test05_addNewWeatherTask()[pri:4, instance:SanityTests.avazaWeb@6326d182]" name="test05_addNewWeatherTask" duration-ms="10958" started-at="2020-11-05T21:21:36 IST" description="Adding new task to Weather project." finished-at="2020-11-05T21:21:47 IST">
+        <test-method status="PASS" signature="test03_deleteTaskFromServerAndVerify()[pri:2, instance:SanityTests.avazaAPI@132ddbab]" name="test03_deleteTaskFromServerAndVerify" duration-ms="5325" started-at="2020-11-05T22:50:30 IST" description="Test03: Delete task from server" finished-at="2020-11-05T22:50:35 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test05_addNewWeatherTask -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="407" started-at="2020-11-05T21:21:47 IST" finished-at="2020-11-05T21:21:48 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="test06_addNewChuckNorrisJokeTask()[pri:5, instance:SanityTests.avazaWeb@6326d182]" name="test06_addNewChuckNorrisJokeTask" duration-ms="5534" started-at="2020-11-05T21:21:48 IST" description="Adding new task to Chuck Norris jokes project." finished-at="2020-11-05T21:21:53 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test06_addNewChuckNorrisJokeTask -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="394" started-at="2020-11-05T21:21:54 IST" finished-at="2020-11-05T21:21:54 IST">
+        </test-method> <!-- test03_deleteTaskFromServerAndVerify -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaAPI@132ddbab]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-11-05T22:50:35 IST" finished-at="2020-11-05T22:50:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="test07_visualTestingOfTheAvatar()[pri:6, instance:SanityTests.avazaWeb@6326d182]" name="test07_visualTestingOfTheAvatar" duration-ms="2363" started-at="2020-11-05T21:21:54 IST" description="Verify left side avatar image" finished-at="2020-11-05T21:21:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test07_visualTestingOfTheAvatar -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="afterMethod" is-config="true" duration-ms="362" started-at="2020-11-05T21:21:57 IST" finished-at="2020-11-05T21:21:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="closeSession()[pri:0, instance:SanityTests.avazaWeb@6326d182]" name="closeSession" is-config="true" duration-ms="610" started-at="2020-11-05T21:21:57 IST" finished-at="2020-11-05T21:21:58 IST">
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:SanityTests.avazaAPI@132ddbab]" name="closeSession" is-config="true" duration-ms="2" started-at="2020-11-05T22:50:35 IST" finished-at="2020-11-05T22:50:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- SanityTests.avazaWeb -->
-    </test> <!-- Web Tests -->
+      </class> <!-- SanityTests.avazaAPI -->
+    </test> <!-- API Tests -->
   </suite> <!-- Suite -->
 </testng-results>

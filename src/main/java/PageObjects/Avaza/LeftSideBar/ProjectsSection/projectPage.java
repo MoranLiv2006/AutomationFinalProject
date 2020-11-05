@@ -20,17 +20,13 @@ public class projectPage
     @FindBy(how = How.CSS, using = "h4[class='ui-pnotify-title']")
     public WebElement popup_doneMsg;
 
-    //Test
-//    @FindBy(how = How.XPATH, using = "//table[@id='team-table']/tbody/tr")
     @FindBy(how = How.XPATH, using = "//div[@class='task-group-body sortable2 ui-sortable']/div")
     public List<WebElement> rows_tasks;
 
     @FindBy(how = How.CSS, using = "button[class='btn btn-success add-task-link  hidden-xs hidden-sm mytasks-hide']")
+//    @FindBy(how = How.CSS, using = "a[href='#']")
     public WebElement btn_addNewTaskUpperButton;
 
     @FindBy(how = How.CSS, using = "div[class='vertical-center task-handle ui-sortable-handle']")
     public List<WebElement> rows_draggableTasks;
-
-    //div[class='vertical-center task-handle ui-sortable-handle']
-
 }

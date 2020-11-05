@@ -35,14 +35,6 @@ public class base
     public static Statement stmt;
     public static ResultSet rs;
 
-    public static PageObjects.ClickUp.loginPage clickupLoginPage;
-    public static PageObjects.ClickUp.leftSideBar clickupLeftSideBar;
-    public static PageObjects.ClickUp.profileMenu.profileMenu profileMenu;
-    public static PageObjects.ClickUp.profileMenu.peopleSection.peoplePage peoplePage;
-    public static PageObjects.ClickUp.profileMenu.profileSideBar profileSideBar;
-    public static PageObjects.ClickUp.tasksSideBar tasksSideBar;
-    public static PageObjects.ClickUp.weatherTasksSection.weatherTasksPage weatherTasksPage;
-
     public static PageObjects.Avaza.loginPage loginPage;
     public static PageObjects.Avaza.mainPage mainPage;
     public static PageObjects.Avaza.leftSideBar leftSideBar;
