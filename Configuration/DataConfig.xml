@@ -14,6 +14,11 @@
     <url>https://automationproject.avaza.com/</url>
     <ImageRepo>./imageRepository/</ImageRepo>
 
+    <!-- Mobile -->
+    <UDID>orlzirqsofxc89so</UDID>
+    <APP_PACKAGE>com.avaza.AvazaCordova</APP_PACKAGE>
+    <APP_ACTIVITY>.MainActivity</APP_ACTIVITY>
+
     <!-- API -->
         <!-- Avaza API -->
         <AvazaAPIURL>https://api.avaza.com/</AvazaAPIURL>

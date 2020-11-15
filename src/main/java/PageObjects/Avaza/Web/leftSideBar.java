@@ -1,4 +1,4 @@
-package PageObjects.Avaza;
+package PageObjects.Avaza.Web;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

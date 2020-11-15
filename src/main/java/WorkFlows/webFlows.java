@@ -38,7 +38,7 @@ public class webFlows extends commonOps
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//table[@id='team-table']/tbody/tr"), 1));
     }
 
-    @Step("Avaza adding new user to the contacts list")
+    @Step("Adding new user to the contacts list")
     public static void avazaAddNewUser()
     {
         List<String> newUserDetails = dbActions.getSecondContactDetails("SELECT email, first_name, last_name FROM Contacts WHERE id='2'");

@@ -1,4 +1,4 @@
-package PageObjects.Avaza.LeftSideBar.ProjectsSection;
+package PageObjects.Avaza.Web.LeftSideBar.ProjectsSection;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

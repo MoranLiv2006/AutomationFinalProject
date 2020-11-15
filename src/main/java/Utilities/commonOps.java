@@ -1,5 +1,8 @@
 package Utilities;
 
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +11,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +22,9 @@ import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
+import PageObjects.Avaza.Mobile.*;
 
 public class commonOps extends base
 {
@@ -102,6 +108,22 @@ public class commonOps extends base
         httpRequest = RestAssured.given().auth().oauth2(getData("AvazaAPIToken"));
     }
 
+    public static void initMobile()
+    {
+        desireCab.setCapability(MobileCapabilityType.UDID, getData("UDID"));
+        desireCab.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, getData("APP_PACKAGE"));
+        desireCab.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, getData("APP_ACTIVITY"));
+        try
+        {
+            mobileDriver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), desireCab);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Cannot connect to appium server, see details: " + e);
+        }
+        managePages.initApp();
+    }
+
     @BeforeClass
     @Parameters({"PlatformName"})
     public void startSession(String PlatformName)
@@ -109,8 +131,8 @@ public class commonOps extends base
         Platform = PlatformName;
         if (Platform.equalsIgnoreCase("web"))
             initBrowser(getData("BrowserName"));
-//        else if(Platform.equalsIgnoreCase("mobile"))
-//            initMobile();
+        else if(Platform.equalsIgnoreCase("mobile"))
+            initMobile();
         else if(Platform.equalsIgnoreCase("api"))
             initAPI();
         else
@@ -124,6 +146,8 @@ public class commonOps extends base
     {
         if (Platform.equalsIgnoreCase("web"))
             driver.get(getData("url"));
+//        else if(Platform.equalsIgnoreCase("mobile"))
+//            WorkFlows.mobileFlows.backToHomePage();
     }
 
     @AfterClass
@@ -131,7 +155,12 @@ public class commonOps extends base
     {
         manageDB.closeDBConnection();
         if (!Platform.equalsIgnoreCase("api"))
-            driver.quit();
+        {
+            if(!Platform.equalsIgnoreCase("mobile"))
+                driver.quit();
+            else
+                mobileDriver.quit();
+        }
 
     }
 }

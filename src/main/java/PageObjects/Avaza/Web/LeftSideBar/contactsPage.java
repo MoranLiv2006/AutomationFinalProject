@@ -1,4 +1,4 @@
-package PageObjects.Avaza.LeftSideBar;
+package PageObjects.Avaza.Web.LeftSideBar;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

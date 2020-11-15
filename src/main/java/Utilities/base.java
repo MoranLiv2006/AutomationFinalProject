@@ -1,8 +1,11 @@
 package Utilities;
 
+import PageObjects.Avaza.Mobile.Sidebar.Projects.ProjectPage.taskMenuPageMobile;
+import io.appium.java_client.AppiumDriver;
 import io.restassured.path.json.JsonPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
@@ -18,6 +21,9 @@ import java.sql.Statement;
 
 public class base
 {
+    protected static AppiumDriver mobileDriver;
+    public static PageObjects.Avaza.Mobile.mainPageMobile mainPageMobile;
+
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Actions action;
@@ -35,13 +41,23 @@ public class base
     public static Statement stmt;
     public static ResultSet rs;
 
-    public static PageObjects.Avaza.loginPage loginPage;
-    public static PageObjects.Avaza.mainPage mainPage;
-    public static PageObjects.Avaza.leftSideBar leftSideBar;
-    public static PageObjects.Avaza.LeftSideBar.contactsPage contactsPage;
-    public static PageObjects.Avaza.LeftSideBar.ProjectsSection.projectsPage projectsPage;
-    public static PageObjects.Avaza.LeftSideBar.ProjectsSection.projectPage projectPage;
-    public static PageObjects.Avaza.LeftSideBar.ProjectsSection.taskMenu taskMenu;
+    public static DesiredCapabilities desireCab = new DesiredCapabilities();
 
+    //Web page objects
+    public static PageObjects.Avaza.Web.loginPage loginPage;
+    public static PageObjects.Avaza.Web.mainPage mainPage;
+    public static PageObjects.Avaza.Web.leftSideBar leftSideBar;
+    public static PageObjects.Avaza.Web.LeftSideBar.contactsPage contactsPage;
+    public static PageObjects.Avaza.Web.LeftSideBar.ProjectsSection.projectsPage projectsPage;
+    public static PageObjects.Avaza.Web.LeftSideBar.ProjectsSection.projectPage projectPage;
+    public static PageObjects.Avaza.Web.LeftSideBar.ProjectsSection.taskMenu taskMenu;
+
+    //Mobile page objects
+//    public static PageObjects.Avaza.Mobile.mainPageMobile mainPageMobile;
+    public static PageObjects.Avaza.Mobile.Sidebar.sidebarMenuMobile sidebarMenuMobile;
+    public static PageObjects.Avaza.Mobile.Sidebar.Contacts.contactsPageMobile contactsPageMobile;
+    public static PageObjects.Avaza.Mobile.Sidebar.Projects.projectsPage projectsPageMobile;
+    public static PageObjects.Avaza.Mobile.Sidebar.Projects.ProjectPage.projectPageMobile projectPageMobile;
+    public static taskMenuPageMobile taskMenuPageMobile;
 
 }
