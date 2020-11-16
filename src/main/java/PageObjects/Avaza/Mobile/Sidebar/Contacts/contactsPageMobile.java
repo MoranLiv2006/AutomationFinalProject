@@ -1,5 +1,7 @@
 package PageObjects.Avaza.Mobile.Sidebar.Contacts;
 
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -21,6 +23,17 @@ public class contactsPageMobile
     @FindBy(how = How.LINK_TEXT, using = "Save")
     public WebElement btn_saveUser;
 
-    ////*[@contentDescription='contact#' and ./parent::*[./parent::*[./parent::*[@id='user-16988']]]]
+//    @FindBy(how = How.XPATH, using = "//*[@contentDescription='contact#' and ./parent::*[./parent::*[./parent::*[@text='Test User']]]]")
+    @FindBy(how = How.XPATH, using = "//*[@contentDescription='contact#' and @text='Test User']")
+    public WebElement btn_rowOption;
+
+    @FindBy(how = How.XPATH, using = "//*[@contentDescription='Delete']")
+    public WebElement btn_deleteUser;
+
+    //
+
+    //
+
+    ////*[ and ]
     //*[@contentDescription='Delete']
 }

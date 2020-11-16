@@ -18,15 +18,19 @@ public class managePages extends base
         taskMenu = PageFactory.initElements(driver, PageObjects.Avaza.Web.LeftSideBar.ProjectsSection.taskMenu.class);
 
         //Mobile
-        sidebarMenuMobile = PageFactory.initElements(driver, PageObjects.Avaza.Mobile.Sidebar.sidebarMenuMobile.class);
-        contactsPageMobile = PageFactory.initElements(driver, PageObjects.Avaza.Mobile.Sidebar.Contacts.contactsPageMobile.class);
-        projectsPageMobile = PageFactory.initElements(driver, PageObjects.Avaza.Mobile.Sidebar.Projects.projectsPage.class);
-        projectPageMobile = PageFactory.initElements(driver, PageObjects.Avaza.Mobile.Sidebar.Projects.ProjectPage.projectPageMobile.class);
-        taskMenuPageMobile = PageFactory.initElements(driver, taskMenuPageMobile.class);
+        sidebarMenuMobile = PageFactory.initElements(mobileDriver, PageObjects.Avaza.Mobile.Sidebar.sidebarMenuMobile.class);
+        contactsPageMobile = PageFactory.initElements(mobileDriver, PageObjects.Avaza.Mobile.Sidebar.Contacts.contactsPageMobile.class);
+        projectsPageMobile = PageFactory.initElements(mobileDriver, PageObjects.Avaza.Mobile.Sidebar.Projects.projectsPage.class);
+        projectPageMobile = PageFactory.initElements(mobileDriver, PageObjects.Avaza.Mobile.Sidebar.Projects.ProjectPage.projectPageMobile.class);
+        taskMenuPageMobile = PageFactory.initElements(mobileDriver, taskMenuPageMobile.class);
+        allTasksPageMobile = PageFactory.initElements(mobileDriver, PageObjects.Avaza.Mobile.Sidebar.AllTasks.allTasksPageMobile.class);
     }
 
     public static void initApp()
     {
-        mainPageMobile test;
+//        mainPageMobile = PageFactory.initElements(new AppiumFieldDecorator(mobileDriver, 3, TimeUnit.SECONDS), this);
+        mainPageMobile = new mainPageMobile(mobileDriver);
+//        sidebarMenuMobile = new sidebarMenuMobile(mobileDriver);
+//        contactsPageMobile = PageFactory.initElements(mobileDriver, PageObjects.Avaza.Mobile.Sidebar.Contacts.contactsPageMobile.class);
     }
 }

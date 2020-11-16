@@ -12,6 +12,6 @@ public class taskMenuPageMobile
     @FindBy(how = How.XPATH, using = "//*[@text='\\n']")
     public WebElement txt_taskDescription;
 
-    @FindBy(how = How.LINK_TEXT, using = "Save")
+    @FindBy(how = How.XPATH, using = "//*[@text='Save']")
     public WebElement btn_saveTask;
 }

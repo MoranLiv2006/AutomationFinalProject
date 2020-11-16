@@ -22,7 +22,7 @@ import java.sql.Statement;
 public class base
 {
     protected static AppiumDriver mobileDriver;
-    public static PageObjects.Avaza.Mobile.mainPageMobile mainPageMobile;
+
 
     public static WebDriver driver;
     public static WebDriverWait wait;
@@ -54,10 +54,12 @@ public class base
 
     //Mobile page objects
 //    public static PageObjects.Avaza.Mobile.mainPageMobile mainPageMobile;
+    public static PageObjects.Avaza.Mobile.mainPageMobile mainPageMobile;
     public static PageObjects.Avaza.Mobile.Sidebar.sidebarMenuMobile sidebarMenuMobile;
     public static PageObjects.Avaza.Mobile.Sidebar.Contacts.contactsPageMobile contactsPageMobile;
     public static PageObjects.Avaza.Mobile.Sidebar.Projects.projectsPage projectsPageMobile;
     public static PageObjects.Avaza.Mobile.Sidebar.Projects.ProjectPage.projectPageMobile projectPageMobile;
     public static taskMenuPageMobile taskMenuPageMobile;
+    public static PageObjects.Avaza.Mobile.Sidebar.AllTasks.allTasksPageMobile allTasksPageMobile;
 
 }

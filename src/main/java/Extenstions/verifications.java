@@ -2,6 +2,7 @@ package Extenstions;
 
 import static org.testng.Assert.*;
 import Utilities.commonOps;
+import io.appium.java_client.MobileElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -78,5 +79,12 @@ public class verifications extends commonOps
     public static void text(String actualText, String expectedText)
     {
         assertEquals(actualText, expectedText, "error");
+    }
+
+    @Step("Verify the text in element is the same as expected text")
+    public static void textInElementMobile(MobileElement elem, String expectedValue)
+    {
+        wait.until(ExpectedConditions.visibilityOf(elem));
+        assertEquals(elem.getText(), expectedValue);
     }
 }

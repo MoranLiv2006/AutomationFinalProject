@@ -53,6 +53,24 @@ public class commonOps extends base
 
     public static void initBrowser(String browserType)
     {
+        //TODO: switch-case function to determent which browser we are working on
+//        switch (browserType)
+//        {
+//            case "chrome":
+//                driver = initChromeDriver();
+//                break;
+//            case "firefox":
+//                driver = initFFDriver();
+//                break;
+//            case "ie":
+//                driver = initIEDriver();
+//                break;
+//            case "edge":
+//                driver = initEdgeriver();
+//                break;
+//            default:
+//                throw new RuntimeException(("Invalid platform name stated"));
+//        }
         if (browserType.equalsIgnoreCase("chrome"))
             driver = initChromeDriver();
         else if (browserType.equalsIgnoreCase("firefox"))
@@ -64,9 +82,6 @@ public class commonOps extends base
         else
             throw new RuntimeException(("Invalid platform name stated"));
         driver.manage().window().maximize();
-//        driver.get("https://www.newegg.com/global/il-en/");
-//        driver.get("https://automation126379.monday.com/");
-//        driver.get("https://app.clickup.com/login");
         driver.get(getData("url"));
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
@@ -121,6 +136,7 @@ public class commonOps extends base
         {
             System.out.println("Cannot connect to appium server, see details: " + e);
         }
+        wait = new WebDriverWait(mobileDriver, Long.parseLong(getData("Timeout")));
         managePages.initApp();
     }
 

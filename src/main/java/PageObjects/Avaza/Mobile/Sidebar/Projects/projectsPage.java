@@ -12,7 +12,7 @@ public class projectsPage
     @FindBy(how = How.LINK_TEXT, using = "Chuck Norris jokes")
     public WebElement btn_chuckNorrisJokesPrject;
 
-    @FindBy(how = How.ID, using = "project-title")
+    @FindBy(how = How.XPATH, using = "//*[@text='Projects']")
     public WebElement txt_projectsHeader;
 
 
