@@ -8,6 +8,4 @@ public class mainPage
 {
     @FindBy(how = How.CSS, using = "div[class='get-started-header text-center']")
     public WebElement txt_welcomeMsg;
-
-
 }

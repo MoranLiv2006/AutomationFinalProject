@@ -15,7 +15,6 @@ public class apiFlows extends commonOps
     public static String getProjectsInformation(String JPath)
     {
         Response response = apiActions.get("api/Project");
-//        response.prettyPrint();
         return apiActions.extractFromJson(response, JPath);
     }
 
@@ -23,7 +22,6 @@ public class apiFlows extends commonOps
     public static String getTasksInformation(String JPath)
     {
         Response response = apiActions.get("api/Task");
-//        response.prettyPrint();
         return apiActions.extractFromJson(response, JPath);
     }
 

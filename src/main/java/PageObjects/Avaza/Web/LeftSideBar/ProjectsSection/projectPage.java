@@ -24,7 +24,6 @@ public class projectPage
     public List<WebElement> rows_tasks;
 
     @FindBy(how = How.CSS, using = "button[class='btn btn-success add-task-link  hidden-xs hidden-sm mytasks-hide']")
-//    @FindBy(how = How.CSS, using = "a[href='#']")
     public WebElement btn_addNewTaskUpperButton;
 
     @FindBy(how = How.CSS, using = "div[class='vertical-center task-handle ui-sortable-handle']")

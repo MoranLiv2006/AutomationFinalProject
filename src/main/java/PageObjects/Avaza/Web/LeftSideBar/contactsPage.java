@@ -40,6 +40,4 @@ public class contactsPage
 
     @FindBy(how = How.CSS, using = "a[class='delete-user']")
     public WebElement btn_deleteUser;
-    //ui-pnotify-text
-
 }

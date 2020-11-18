@@ -11,7 +11,6 @@ public class apiActions extends commonOps
     public static Response get(String paramValues)
     {
         response = httpRequest.get(paramValues);
-//        response.prettyPrint();
         return response;
     }
 
@@ -35,6 +34,4 @@ public class apiActions extends commonOps
     {
         response = httpRequest.delete(pathToDeleteOnServer+"/?TaskID="+idToDelete);
     }
-
-
 }

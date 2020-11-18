@@ -17,6 +17,4 @@ public class leftSideBar
 
     @FindBy(how = How.CSS, using = "a[title='AVAZA']  img")
     public WebElement img_avazaAvatar;
-
-
 }

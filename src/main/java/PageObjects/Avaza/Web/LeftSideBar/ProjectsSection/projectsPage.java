@@ -6,7 +6,6 @@ import org.openqa.selenium.support.How;
 
 public class projectsPage
 {
-//    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Weather')]")
     @FindBy(how = How.ID, using = "project-14398")
     public WebElement btn_weatherProject;
 
@@ -15,5 +14,4 @@ public class projectsPage
 
     @FindBy(how = How.CSS, using = "div[class='standard-page-title']")
     public WebElement txt_projectsHeader;
-    //
 }

@@ -14,6 +14,4 @@ public class projectsPage
 
     @FindBy(how = How.XPATH, using = "//*[@text='Projects']")
     public WebElement txt_projectsHeader;
-
-
 }

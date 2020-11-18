@@ -14,5 +14,4 @@ public class taskMenu
 
     @FindBy(how = How.XPATH, using = "//form[@id='create-task-form']//button[@type='submit']")
     public WebElement btn_save;
-
 }

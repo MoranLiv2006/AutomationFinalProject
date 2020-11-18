@@ -11,4 +11,10 @@ public class projectPageMobile
 
     @FindBy(how = How.XPATH, using = "//*[@contentDescription='Add task']")
     public WebElement btn_newTask;
+
+    @FindBy(how = How.XPATH, using = "//*[@text='Success']")
+    public WebElement popup_doneMsg;
+
+    @FindBy(how = How.ID, using = "tasklist-vertical")
+    public WebElement table_tasksTable;
 }

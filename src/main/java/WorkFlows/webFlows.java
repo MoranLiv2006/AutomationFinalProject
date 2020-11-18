@@ -13,14 +13,6 @@ import static Utilities.helperMethods.*;
 
 public class webFlows extends commonOps
 {
-    @Step("Login Avaza Flow")
-    public static void avazeLogin(String email, String password)
-    {
-        uiActions.updateText(loginPage.input_emailInput, email);
-        uiActions.updateText(loginPage.input_passwordInput, password);
-        uiActions.click(loginPage.btn_login);
-    }
-
     @Step("Login Avaza Flow with credentials from DB.")
     public static void avazeLoginWithDB()
     {
@@ -31,14 +23,14 @@ public class webFlows extends commonOps
         uiActions.click(loginPage.btn_login);
     }
 
-    @Step("Login Avaza Flow")
+    @Step("Navigating to the contacts list page.")
     public static void avazaContactsList()
     {
         uiActions.click(leftSideBar.btn_contacts);
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//table[@id='team-table']/tbody/tr"), 1));
     }
 
-    @Step("Adding new user to the contacts list")
+    @Step("Adding new user to the contacts list.")
     public static void avazaAddNewUser()
     {
         List<String> newUserDetails = dbActions.getSecondContactDetails("SELECT email, first_name, last_name FROM Contacts WHERE id='2'");
@@ -53,7 +45,7 @@ public class webFlows extends commonOps
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//table[@id='team-table']/tbody/tr"), 2));
     }
 
-    @Step("Deleting the new user from the contacts list table")
+    @Step("Deleting the new user from the contacts list table.")
     public static void deleteTheNewUser()
     {
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//table[@id='team-table']/tbody/tr"), 2));
@@ -67,13 +59,13 @@ public class webFlows extends commonOps
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//table[@id='team-table']/tbody/tr"), 1));
     }
 
-    @Step("Navigate to the projects page")
+    @Step("Navigating to the projects page.")
     public static void getInsideProjectsPage()
     {
         uiActions.mouseHoverElements(leftSideBar.btn_projects, leftSideBar.btn_allProjects);
     }
 
-    @Step("Navigate to project called Weather")
+    @Step("Navigating to project called Weather.")
     public static void goToWeatherProject()
     {
         try
@@ -87,7 +79,7 @@ public class webFlows extends commonOps
         }
     }
 
-    @Step("Navigate to project called Chuck Norris jokes")
+    @Step("Navigating to project called Chuck Norris jokes.")
     public static void goToChuckNorrisProject()
     {
         try
@@ -101,10 +93,9 @@ public class webFlows extends commonOps
         }
     }
 
-    @Step("Adding new weather task to the tasks list inside the project, writing the task headline and description")
-    public static void writeWeatherTaskWithDescription() throws InterruptedException
+    @Step("Adding new weather task to the tasks list inside the project, writing the task headline and description.")
+    public static void writeWeatherTaskWithDescription()
     {
-        Thread.sleep(1000);
         uiActions.click(projectPage.btn_addNewTaskUpperButton);
         uiActions.updateText(taskMenu.input_taskTitle, "Weather information for: " + getWeatherInformation().get(0) + " on: " + getTimeAndDate() + " (Front Side)");
         uiActions.updateText(taskMenu.input_taskDescription, "Weather information for: " + getWeatherInformation().get(0) + " on: " + getTimeAndDate() + " Temperature: " + getWeatherInformation().get(1) + ", Feels like: " + getWeatherInformation().get(2));
@@ -120,8 +111,6 @@ public class webFlows extends commonOps
         uiActions.click(taskMenu.btn_save);
     }
 
-
-
     @Step("Drag and drop between tasks")
     public static void draggingAndSwitchingTasksPlaces()
     {
@@ -129,6 +118,4 @@ public class webFlows extends commonOps
         WebElement droppable = projectPage.rows_draggableTasks.get(2);
         action.dragAndDrop(draggable, droppable).build().perform();
     }
-
-
 }

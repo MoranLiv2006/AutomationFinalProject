@@ -14,9 +14,6 @@ public class loginPage
 
     @FindBy(how = How.CSS, using = "input[class='btn btn-primary btn-lg']")
     public WebElement btn_login;
-
-
-
 }
 
 

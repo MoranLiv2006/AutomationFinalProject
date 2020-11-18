@@ -1,8 +1,6 @@
 package PageObjects.Avaza.Mobile;
 
-//import io.appium.java_client.MobileElement;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
@@ -25,7 +23,6 @@ public class mainPageMobile
     @FindBy(how = How.XPATH, using = "//*[@text='Welcome to Avaza, the cloud business platform.']")
     public WebElement txt_welcomeMsg;
 
-    @FindBy(how = How.XPATH, using = "//*[@class='android.view.View' and ./*[@contentDescription='javascript:void(0)']]")
+    @FindBy(how = How.XPATH, using = "//*[@text='\uF0C9']")
     public AndroidElement btn_sideBarMenu;
-
 }

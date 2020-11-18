@@ -11,7 +11,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -24,7 +23,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import PageObjects.Avaza.Mobile.*;
 
 public class commonOps extends base
 {
@@ -53,40 +51,28 @@ public class commonOps extends base
 
     public static void initBrowser(String browserType)
     {
-        //TODO: switch-case function to determent which browser we are working on
-//        switch (browserType)
-//        {
-//            case "chrome":
-//                driver = initChromeDriver();
-//                break;
-//            case "firefox":
-//                driver = initFFDriver();
-//                break;
-//            case "ie":
-//                driver = initIEDriver();
-//                break;
-//            case "edge":
-//                driver = initEdgeriver();
-//                break;
-//            default:
-//                throw new RuntimeException(("Invalid platform name stated"));
-//        }
-        if (browserType.equalsIgnoreCase("chrome"))
-            driver = initChromeDriver();
-        else if (browserType.equalsIgnoreCase("firefox"))
-            driver = initFFDriver();
-        else if (browserType.equalsIgnoreCase("ie"))
-            driver = initIEDriver();
-        else if (browserType.equalsIgnoreCase("edge"))
-            driver = initEdgeriver();
-        else
-            throw new RuntimeException(("Invalid platform name stated"));
+        switch (browserType.toLowerCase())
+        {
+            case "chrome":
+                driver = initChromeDriver();
+                break;
+            case "firefox":
+                driver = initFFDriver();
+                break;
+            case "ie":
+                driver = initIEDriver();
+                break;
+            case "edge":
+                driver = initEdgeriver();
+                break;
+            default:
+                throw new RuntimeException(("Invalid platform name stated."));
+        }
         driver.manage().window().maximize();
         driver.get(getData("url"));
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
         action = new Actions(driver);
-
     }
 
     public static WebDriver initChromeDriver()
@@ -162,8 +148,8 @@ public class commonOps extends base
     {
         if (Platform.equalsIgnoreCase("web"))
             driver.get(getData("url"));
-//        else if(Platform.equalsIgnoreCase("mobile"))
-//            WorkFlows.mobileFlows.backToHomePage();
+        else if(Platform.equalsIgnoreCase("mobile"))
+            WorkFlows.mobileFlows.backToHomePage();
     }
 
     @AfterClass
@@ -177,6 +163,5 @@ public class commonOps extends base
             else
                 mobileDriver.quit();
         }
-
     }
 }

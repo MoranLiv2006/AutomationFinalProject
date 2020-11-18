@@ -1,5 +1,6 @@
 package Utilities;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -31,6 +32,7 @@ public class helperMethods extends commonOps
         }
     }
 
+    @Step("Get weather information from OpenWeatherMapAPI.")
     public static List<String> getWeatherInformation()
     {
         RequestSpecification httpRequest;
@@ -56,32 +58,7 @@ public class helperMethods extends commonOps
         return paramsList;
     }
 
-    public static List<String> getRecipeInformation()
-    {
-//        RequestSpecification httpRequest;
-//        Response response;
-
-        String url = "https://api.spoonacular.com/recipes/random";
-        String APIKey = "e337d976eee14d2b9eccf3f520cc3939";
-        String numberOfRecipes = "1";
-
-        RestAssured.baseURI = url;
-        httpRequest = RestAssured.given();
-
-        response = httpRequest.get("?apiKey=" + APIKey + "&number=" + numberOfRecipes);
-//        response.prettyPrint();
-
-        JsonPath jp = response.jsonPath();
-
-        List<String> paramsList = new ArrayList<String>();
-        paramsList.add(jp.get("recipes.title").toString());
-        paramsList.add(jp.get("recipes.summary").toString());
-        paramsList.add(jp.get("recipes.instructions").toString());
-        paramsList.add(jp.get("recipes.sourceUrl").toString());
-
-        return paramsList;
-    }
-
+    @Step("Get new Chuck Norris joke from the api.")
     public static String getChuckNorrisJoke()
     {
         RequestSpecification httpRequest;
@@ -93,13 +70,13 @@ public class helperMethods extends commonOps
         httpRequest = RestAssured.given();
 
         response = httpRequest.get();
-//        response.prettyPrint();
 
         JsonPath jp = response.jsonPath();
 
         return jp.get("value").toString();
     }
 
+    @Step("Get the computer current time and date.")
     public static String getTimeAndDate()
     {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

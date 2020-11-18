@@ -2,6 +2,7 @@ package Extenstions;
 
 import static org.testng.Assert.*;
 import Utilities.commonOps;
+import Utilities.helperMethods;
 import io.appium.java_client.MobileElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
@@ -18,27 +19,12 @@ import java.util.List;
 
 public class verifications extends commonOps
 {
-
     @Step("Verify the text in element is the same as expected text")
     public static void textInElement(WebElement elem, String expectedValue)
     {
         wait.until(ExpectedConditions.visibilityOf(elem));
         assertEquals(elem.getText(), expectedValue);
     }
-
-    @Step("Verify the page title is the same as expected text")
-    public static void pageTitle(WebElement elem, String expectedTitle)
-    {
-       wait.until(ExpectedConditions.visibilityOf(elem));
-       assertEquals(driver.getTitle(), expectedTitle);
-    }
-//    public static void textInElementWhileHover(WebElement elemHover, WebElement txtElem, String expectedValue)
-//    {
-//       wait.until(ExpectedConditions.visibilityOf(elemHover));
-//       uiActions.mouseHoverElement(elemHover);
-//       wait.until(ExpectedConditions.visibilityOf(txtElem));
-//       assertEquals(txtElem.getText(), expectedValue);
-//    }
 
     @Step("Verify the amount of element in a list is the same as expected amount")
     public static void numbersOfElements(List<WebElement> elems, int expectedValue)
@@ -47,19 +33,10 @@ public class verifications extends commonOps
         assertEquals(elems.size(), expectedValue);
     }
 
-    public static void elementExist(WebElement elem)
-    {
-        assertTrue(elem.isEnabled());
-    }
-
-    public static void elementNotExist(WebElement elem)
-    {
-        assertFalse(elem.isDisplayed());
-    }
-
     @Step("Verify Element visually")
     public static void VisualElement(WebElement imageElement, String expectedImageName)
     {
+        helperMethods.takeElementScreenShot(leftSideBar.img_avazaAvatar, "avazaAvatar");
         BufferedImage expectedImage = null;
         try
         {
@@ -75,16 +52,10 @@ public class verifications extends commonOps
         assertFalse(diff.hasDiff(), "Images are not the same");
     }
 
-    @Step("Verify text with text")
-    public static void text(String actualText, String expectedText)
+    @Step("Verify text received from the API Server with expected text.")
+    public static void verifyTextFromAPIServer(String actualText, String expectedText)
     {
         assertEquals(actualText, expectedText, "error");
     }
 
-    @Step("Verify the text in element is the same as expected text")
-    public static void textInElementMobile(MobileElement elem, String expectedValue)
-    {
-        wait.until(ExpectedConditions.visibilityOf(elem));
-        assertEquals(elem.getText(), expectedValue);
-    }
 }

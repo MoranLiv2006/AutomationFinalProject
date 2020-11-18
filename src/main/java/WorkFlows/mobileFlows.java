@@ -1,134 +1,79 @@
 package WorkFlows;
 
-import Extenstions.dbActions;
 import Utilities.commonOps;
 import Extenstions.uiActions;
 import Extenstions.mobileActions;
 import io.qameta.allure.Step;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-
-import java.util.List;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static Utilities.helperMethods.*;
 
 public class mobileFlows extends commonOps
 {
+    @Step("Opening the sidebar by click the icon.")
     public static void openSidebar()
     {
        uiActions.click(mainPageMobile.btn_sideBarMenu);
     }
 
-    public static void openContactsMenu()
-    {
-        openSidebar();
-        uiActions.click(sidebarMenuMobile.btn_contacts);
-//        mobileDriver.findElement(By.xpath("//*[@contentDescription='Contacts']")).click();
-    }
-
+    @Step("Opening the Projects menu by clicking the Projects button.")
     public static void goToProjectsMenu()
     {
-        try
-        {
-            uiActions.click(sidebarMenuMobile.btn_allProjects);
-            Thread.sleep(500);
-        }
-        catch (Exception e)
-        {
-        System.out.println("Error: " + e);
-        }
+        uiActions.click(sidebarMenuMobile.btn_allProjects);
     }
 
-    public static void goToAllTasksSection()
-    {
-        uiActions.click(sidebarMenuMobile.btn_allTasks);
-    }
-
+    @Step("Navigate to Weather project in the projects menu by clicking the Weather project button.")
     public static void goToWeatherProject()
     {
         uiActions.click(projectsPageMobile.btn_weatherPrject);
     }
 
+    @Step("Navigate to Chuck Norris Jokes project in the projects menu by clicking the Chuck Norris Jokes project button.")
     public static void goToChuckNorrisProject()
     {
         uiActions.click(projectsPageMobile.btn_chuckNorrisJokesPrject);
     }
 
+    @Step("Navigate to All Tasks menu by clicking the button.")
+    public static void goToAllTasksMenu()
+    {
+        uiActions.click(sidebarMenuMobile.btn_allTasks);
+    }
+
+    @Step("Navigate back to the main page of the app after finishing successfully test.")
     public static void backToHomePage()
     {
         openSidebar();
         uiActions.click(sidebarMenuMobile.btn_homePage);
-        try
-        {
-            Thread.sleep(1000);
-        } catch (InterruptedException e)
-        {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.visibilityOf(mainPageMobile.txt_welcomeMsg));
     }
 
-    @Step("Adding new user to the contacts list")
-    public static void avazaAddNewUser()
-    {
-        List<String> newUserDetails = dbActions.getSecondContactDetails("SELECT email, first_name, last_name FROM Contacts WHERE id='2'");
-        uiActions.click(contactsPageMobile.btn_addUser);
-        uiActions.updateText(contactsPageMobile.input_emailInput, newUserDetails.get(0));
-        uiActions.updateText(contactsPageMobile.input_firstNameInput, newUserDetails.get(1));
-        uiActions.updateText(contactsPageMobile.input_lastNameInput, newUserDetails.get(2));
-        mobileActions.swiptToBottom();
-        uiActions.click(contactsPageMobile.btn_saveUser);
-    }
-
-    @Step("Deleting the new user from the contacts list.")
-    public static void avazaDeleteUser()
-    {
-        System.out.println(mobileDriver.findElements(By.xpath("//*[@class='android.view.View']")).size());
-        uiActions.click(contactsPageMobile.btn_rowOption);
-        uiActions.click(contactsPageMobile.btn_deleteUser);
-
-        Alert popup = mobileDriver.switchTo().alert();
-        popup.accept();
-        mobileDriver.switchTo().defaultContent();
-    }
-
+    @Step("Writing new task in Weather project - each task contain headline and description as weather of Rishon Le Zion (My hometown) in the current time.")
     public static void writeWeatherTaskWithDescription()
     {
-        uiActions.click(allTasksPageMobile.btn_newTask);
+        uiActions.click(projectPageMobile.btn_newTask);
         uiActions.updateText(taskMenuPageMobile.txt_taskTitle, "Weather information for: " + getWeatherInformation().get(0) + " on: " + getTimeAndDate() + " (Mobile)");
-        mobileDriver.hideKeyboard();
         uiActions.click(taskMenuPageMobile.txt_taskDescription);
         uiActions.updateText(taskMenuPageMobile.txt_taskDescription, "Weather information for: " + getWeatherInformation().get(0) + " on: " + getTimeAndDate() + " Temperature: " + getWeatherInformation().get(1) + ", Feels like: " + getWeatherInformation().get(2));
         mobileDriver.hideKeyboard();
-        try
-        {
-            Thread.sleep(1000);
-            uiActions.click(taskMenuPageMobile.btn_saveTask);
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
-        mobileFlows.openSidebar();
-    }
-
-    public static void writeChuckNorrisTaskWithDescription()
-    {
-        uiActions.click(allTasksPageMobile.btn_newTask);
-        uiActions.click(projectPageMobile.btn_newTask);
-        uiActions.updateText(taskMenuPageMobile.txt_taskTitle, getChuckNorrisJoke() + " " + getTimeAndDate() + " (Mobile)");
-        uiActions.updateText(taskMenuPageMobile.txt_taskDescription, getTimeAndDate() + " (Front Side)");
         uiActions.click(taskMenuPageMobile.btn_saveTask);
     }
 
-    public static void addTasksOfBothKinds()
+    @Step("Writing new task in Chuck Norris Jokes project - each task contain headline and description as joke about Chuck Norris, imported by chucknorris.io api.")
+    public static void writeChuckNorrisTaskWithDescription()
     {
-        writeWeatherTaskWithDescription();
-        writeChuckNorrisTaskWithDescription();
+        uiActions.click(projectPageMobile.btn_newTask);
+        uiActions.updateText(taskMenuPageMobile.txt_taskTitle, getChuckNorrisJoke() + " " + getTimeAndDate() + " (Mobile)");
+        uiActions.click(taskMenuPageMobile.txt_taskDescription);
+        uiActions.updateText(taskMenuPageMobile.txt_taskDescription, getTimeAndDate() + " (Mobile)");
+        mobileDriver.hideKeyboard();
+        uiActions.click(taskMenuPageMobile.btn_saveTask);
     }
 
-
-
-
-
-
+    @Step("Swipe to the bottom of the tasks page.")
+    public static void swiptDown3TimesInAllTasks()
+    {
+        mobileActions.threeTimesVerticalSwipe(projectPageMobile.table_tasksTable);
+    }
 }
