@@ -3,7 +3,7 @@ Hello,
 
 My name is **Moran Treibochan**, and this is my **automation final  project**.
 
-I made this project to implement my automation skills that I acquire in the "Full stack automation tester" course I was did. (`By Yoni Flenner`)
+I made this project to implement my automation skills that I acquire in the "Full stack automation tester" course. (`By Yoni Flenner`)
 
 The project infrastructure was **created from scratch**.
 
@@ -24,6 +24,6 @@ This information I'm taking from "https://openweathermap.org/" API in **"get" re
 The Chuck Norris task contain joke about Chuck Norris.
 This joke I'm taking randomly from "https://api.chucknorris.io/" API in **"get" request**.
 
-The logging credentials are stored in Date Base, by https://remotemysql.com/
+The logging credentials are stored in Data Base, by https://remotemysql.com/
 which I get from the DB by **SQL query**.
 
