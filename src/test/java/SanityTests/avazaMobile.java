@@ -3,9 +3,7 @@ package SanityTests;
 import Extenstions.verifications;
 import Utilities.commonOps;
 import WorkFlows.mobileFlows;
-import WorkFlows.webFlows;
 import io.qameta.allure.Description;
-import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -19,35 +17,9 @@ public class avazaMobile extends commonOps
         verifications.textInElement(mainPageMobile.txt_welcomeMsg, "Welcome to Avaza, the cloud business platform.");
     }
 
-//    @Test(priority = 1)
-//    public static void testkaka()
-//    {
-//        mobileFlows.openSidebar();
-//        mobileFlows.goToAllTasksSection();
-//        verifications.textInElement(allTasksPageMobile.txt_pageHeader, "All Tasks  ");
-//        mobileFlows.addTasksOfBothKinds();
-//
-//
-//    }
-
-//    @Test(priority = 1, description = "Test02: Add and verify new user.")
-//    @Description("Test Description: Adding new user to the contacts list and verifying the contacts list has grown.")
-//    public static void test02_avazaAddNewUser()
-//    {
-//        mobileFlows.openContactsMenu();
-//        mobileFlows.avazaAddNewUser();
-//    }
-//
-//    @Test(priority = 2, description = "Test03: Deleting the new user.")
-//    @Description("Test Description: Adding new user to the contacts list and verifying the contacts list has grown.")
-//    public static void test03_avazaDeleteUser()
-//    {
-//        mobileFlows.avazaDeleteUser();
-//    }
-
-    @Test(priority = 2, description = "Test02: Weather task.")
+    @Test(priority = 1, description = "Test02: Weather task.")
     @Description("Test Description: Adding new user to the contacts list and verifying the contacts list has grown.")
-    public static void test03_addNewWeatherTask()
+    public static void test02_addNewWeatherTask()
     {
         mobileFlows.openSidebar();
         mobileFlows.goToProjectsMenu();
@@ -55,32 +27,28 @@ public class avazaMobile extends commonOps
         mobileFlows.goToWeatherProject();
         verifications.textInElement(projectPageMobile.txt_projectHeader, "Weather");
         mobileFlows.writeWeatherTaskWithDescription();
-
-//
-//        verifications.textInElement(projectPage.popup_doneMsg, "Success");
-
+        verifications.textInElement(projectPageMobile.popup_doneMsg, "Success");
     }
-//
-//    @Test(priority = 2, description = "Test03: Chuck Norris joke task.")
-//    @Description("Test Description: Adding new user to the contacts list and verifying the contacts list has grown.")
-//    public static void test04_addNewChuckNorrisJokeTask()
-//    {
-//        mobileFlows.openSidebar();
-//        mobileFlows.goToProjectsMenu();
-//        verifications.textInElement(projectsPageMobile.txt_projectsHeader, "Projects");
-//        mobileFlows.goToChuckNorrisProject();
-//        verifications.textInElement(projectPageMobile.txt_projectHeader, "Chuck Norris jokes");
-//        mobileFlows.writeChuckNorrisTaskWithDescription();
-////        verifications.textInElement(projectPage.popup_doneMsg, "Success");
-//
-//    }
 
-//    @Test
-//    public static void sdfsdf()
-//    {
-//        System.out.println(mobileDriver.getDeviceTime());
-//        System.out.println(mobileDriver.findElement(By.xpath("//*[@text='Welcome to Avaza, the cloud business platform.']")).getText());
-//    }
+    @Test(priority = 2, description = "Test03: Chuck Norris joke task.")
+    @Description("Test Description: Adding new user to the contacts list and verifying the contacts list has grown.")
+    public static void test03_addNewChuckNorrisJokeTask()
+    {
+        mobileFlows.openSidebar();
+        mobileFlows.goToProjectsMenu();
+        verifications.textInElement(projectsPageMobile.txt_projectsHeader, "Projects");
+        mobileFlows.goToChuckNorrisProject();
+        verifications.textInElement(projectPageMobile.txt_projectHeader, "Chuck Norris jokes");
+        mobileFlows.writeChuckNorrisTaskWithDescription();
+        verifications.textInElement(projectPageMobile.popup_doneMsg, "Success");
+    }
 
-
+    @Test(priority = 3, description = "Test04: Swipe to the see the tasks that recently created.")
+    @Description("Test Description: Navigate to the all tasks page and swipe to the bottom of the page the see the tasks that you just created.")
+    public static void test04_swipeVertically3TimesInTasksPage()
+    {
+        mobileFlows.openSidebar();
+        mobileFlows.goToAllTasksMenu();
+        mobileFlows.swiptDown3TimesInAllTasks();
+    }
 }

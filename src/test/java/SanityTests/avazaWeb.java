@@ -15,7 +15,6 @@ public class avazaWeb extends commonOps
     public void test01_login()
     {
         webFlows.avazeLoginWithDB();
-//        webFlows.avazeLogin(getData("userEmail"), getData("userPassword"));
         verifications.textInElement(mainPage.txt_welcomeMsg, "Welcome to Avaza, the cloud business platform.\nLet's get your business up and running. View all support articles");
     }
 
@@ -58,8 +57,8 @@ public class avazaWeb extends commonOps
         webFlows.goToWeatherProject();
         verifications.textInElement(projectPage.txt_projectHeader, "Weather");
         webFlows.writeWeatherTaskWithDescription();
-        webFlows.draggingAndSwitchingTasksPlaces();
         verifications.textInElement(projectPage.popup_doneMsg, "Success");
+        webFlows.draggingAndSwitchingTasksPlaces();
     }
 
     @Test(priority = 5, description = "Adding new task to Chuck Norris jokes project.")
@@ -71,8 +70,8 @@ public class avazaWeb extends commonOps
         webFlows.goToChuckNorrisProject();
         verifications.textInElement(projectPage.txt_projectHeader, "Chuck Norris jokes");
         webFlows.writeChuckNorrisTaskWithDescription();
-        webFlows.draggingAndSwitchingTasksPlaces();
         verifications.textInElement(projectPage.popup_doneMsg, "Success");
+        webFlows.draggingAndSwitchingTasksPlaces();
     }
 
     @Test(priority = 6, description = "Verify left side avatar image")

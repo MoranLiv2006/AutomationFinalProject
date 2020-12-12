@@ -26,13 +26,4 @@ public class uiActions extends commonOps
     {
         action.moveToElement(elem1).moveToElement(elem2).click().build().perform();
     }
-
-//    @Step("Sending text to text-field and then press a certain key")
-//    public static void updateTextWithKey(WebElement elem, String value, Keys key)
-//    {
-//        wait.until(ExpectedConditions.visibilityOf(elem));
-//        elem.sendKeys(value, key);
-//    }
-
-
 }

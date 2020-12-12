@@ -4,7 +4,6 @@ import Utilities.commonOps;
 import Extenstions.uiActions;
 import Extenstions.mobileActions;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static Utilities.helperMethods.*;
@@ -74,6 +73,6 @@ public class mobileFlows extends commonOps
     @Step("Swipe to the bottom of the tasks page.")
     public static void swiptDown3TimesInAllTasks()
     {
-        mobileActions.threeTimesVerticalSwipe(projectPageMobile.table_tasksTable);
+        mobileActions.swipeVerticalNumberOfTimes(projectPageMobile.table_tasksTable, 3);
     }
 }

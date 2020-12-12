@@ -3,13 +3,11 @@ package Extenstions;
 import static org.testng.Assert.*;
 import Utilities.commonOps;
 import Utilities.helperMethods;
-import io.appium.java_client.MobileElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 import ru.yandex.qatools.ashot.coordinates.WebDriverCoordsProvider;
 
 import javax.imageio.ImageIO;

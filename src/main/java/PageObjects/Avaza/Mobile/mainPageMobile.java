@@ -1,7 +1,6 @@
 package PageObjects.Avaza.Mobile;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,5 +23,5 @@ public class mainPageMobile
     public WebElement txt_welcomeMsg;
 
     @FindBy(how = How.XPATH, using = "//*[@text='\uF0C9']")
-    public AndroidElement btn_sideBarMenu;
+    public WebElement btn_sideBarMenu;
 }

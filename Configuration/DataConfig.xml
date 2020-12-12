@@ -27,6 +27,7 @@
         <!-- OpenWeatherMap API -->
         <OpenWeatherMapTokenAPIURL>http://api.openweathermap.org/data/2.5/weather</OpenWeatherMapTokenAPIURL>
         <OpenWeatherMapToken>e24d6bd1b67f9ac5d4a8e5343632fbac</OpenWeatherMapToken>
+        <CityToCheckWeather>Rishon LeZiyyon, IL</CityToCheckWeather>
 
         <!-- Chuck Norris Jokes API -->
         <ChuckNorrisJokesAPIURL>https://api.chucknorris.io/jokes/random</ChuckNorrisJokesAPIURL>

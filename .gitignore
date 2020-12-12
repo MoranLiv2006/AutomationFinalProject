@@ -1,6 +1,5 @@
 /allure-report/
 /allure-results/
 .idea
-/target/*
-/target/
 /debug.log
+/target/

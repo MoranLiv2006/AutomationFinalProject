@@ -39,7 +39,7 @@ public class helperMethods extends commonOps
         Response response;
 
         String url = getData("OpenWeatherMapTokenAPIURL");
-        String city = "Rishon LeZiyyon, IL";
+        String city = getData("CityToCheckWeather");
         String APIKey = getData("OpenWeatherMapToken");
         String units = "metric";
 

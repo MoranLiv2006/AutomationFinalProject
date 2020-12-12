@@ -12,10 +12,8 @@ public class avazaAPI extends commonOps
     @Description("Test Description: Getting all the projects from the Avaza server.")
     public void test01_getProjectsNameFromServerAndVerify()
     {
-        verifications.text(apiFlows.getProjectsInformation("Projects[0].Title"), "Chuck Norris jokes");
-        verifications.text(apiFlows.getProjectsInformation("Projects[1].Title"), "Weather");
-//        System.out.println(apiFlows.getTasksInformation("TotalCount"));
-
+        verifications.verifyTextFromAPIServer(apiFlows.getProjectsInformation("Projects[0].Title"), "Chuck Norris jokes");
+        verifications.verifyTextFromAPIServer(apiFlows.getProjectsInformation("Projects[1].Title"), "Weather");
     }
 
     @Test(priority = 1, description = "Test02: Post new task to server")
@@ -29,7 +27,7 @@ public class avazaAPI extends commonOps
         apiFlows.postTaskData("14933", "32336");
 
         int expectedValue = Integer.valueOf(tasksBeforePost);
-        verifications.text(apiFlows.getTasksInformation("TotalCount"), String.valueOf(expectedValue+2));
+        verifications.verifyTextFromAPIServer(apiFlows.getTasksInformation("TotalCount"), String.valueOf(expectedValue+2));
 
         System.out.println("After: " + apiFlows.getTasksInformation("TotalCount"));
     }
@@ -43,7 +41,7 @@ public class avazaAPI extends commonOps
         apiFlows.deleteTask();
 
         int expectedValue = Integer.valueOf(tasksBeforeDelete);
-        verifications.text(apiFlows.getTasksInformation("TotalCount"), String.valueOf(expectedValue-1));
+        verifications.verifyTextFromAPIServer(apiFlows.getTasksInformation("TotalCount"), String.valueOf(expectedValue-1));
 
         System.out.println("After: " + apiFlows.getTasksInformation("TotalCount"));
     }

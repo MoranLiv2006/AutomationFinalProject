@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class mobileActions extends commonOps
 {
     @Step("Swipe down 3 times from a particular element.")
-    public static void threeTimesVerticalSwipe(WebElement startElem)
+    public static void swipeVerticalNumberOfTimes(WebElement startElem, int numberOfTimeToSwipe)
     {
         wait.until(ExpectedConditions.visibilityOf(startElem));
         Dimension dim = mobileDriver.manage().window().getSize();
@@ -20,7 +20,7 @@ public class mobileActions extends commonOps
         int top_y = (int)(height*0.80);
         int bottom_y = (int)(height*0.20);
         System.out.println("coordinates :" + x + "  "+ top_y + " "+ bottom_y);
-        for(int i=0 ; i<3 ; i++)
+        for(int i=0 ; i<numberOfTimeToSwipe ; i++)
         {
             mobileDriver.swipe(x, top_y, x,bottom_y, 200);
         }
