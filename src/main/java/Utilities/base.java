@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
@@ -57,5 +58,4 @@ public class base
     public static PageObjects.Avaza.Mobile.Sidebar.Projects.projectsPage projectsPageMobile;
     public static PageObjects.Avaza.Mobile.Sidebar.Projects.ProjectPage.projectPageMobile projectPageMobile;
     public static taskMenuPageMobile taskMenuPageMobile;
-
 }

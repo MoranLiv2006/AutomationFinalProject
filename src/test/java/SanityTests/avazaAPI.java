@@ -12,8 +12,9 @@ public class avazaAPI extends commonOps
     @Description("Test Description: Getting all the projects from the Avaza server.")
     public void test01_getProjectsNameFromServerAndVerify()
     {
-        verifications.verifyTextFromAPIServer(apiFlows.getProjectsInformation("Projects[0].Title"), "Chuck Norris jokes");
-        verifications.verifyTextFromAPIServer(apiFlows.getProjectsInformation("Projects[1].Title"), "Weather");
+        System.out.println(apiFlows.getProjectsInformation("Projects.Title"));
+        verifications.verifyTextFromAPIServerContains(apiFlows.getProjectsInformation("Projects.Title"), "Weather");
+        verifications.verifyTextFromAPIServerContains(apiFlows.getProjectsInformation("Projects.Title"), "Chuck Norris jokes");
     }
 
     @Test(priority = 1, description = "Test02: Post new task to server")

@@ -50,7 +50,7 @@ public class avazaWeb extends commonOps
 
     @Test(priority = 4, description = "Adding new task to Weather project.")
     @Description("Test Description: Adding new task to Weather project, each task should contain weather information of Rishon Le-Zion city at the time of the test.")
-    public void test05_addNewWeatherTask() throws InterruptedException
+    public void test05_addNewWeatherTask()
     {
         webFlows.getInsideProjectsPage();
         verifications.textInElement(projectsPage.txt_projectsHeader, "Projects");

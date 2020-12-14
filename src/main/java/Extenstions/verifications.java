@@ -51,9 +51,14 @@ public class verifications extends commonOps
     }
 
     @Step("Verify text received from the API Server with expected text.")
-    public static void verifyTextFromAPIServer(String actualText, String expectedText)
+    public static void verifyTextFromAPIServer(String actualTextBackFromAPI, String expectedText)
     {
-        assertEquals(actualText, expectedText, "error");
+        assertEquals(actualTextBackFromAPI, expectedText, "Error: Text back from API Server doesn't match the word: " + expectedText + ".");
+    }
+
+    public static void verifyTextFromAPIServerContains(String textBackFromAPI, String textToCheck)
+    {
+        assertTrue(textBackFromAPI.toString().contains(textToCheck), "Error: Text back from API Server doesn't contains the word: " + textToCheck + ".");
     }
 
 }
